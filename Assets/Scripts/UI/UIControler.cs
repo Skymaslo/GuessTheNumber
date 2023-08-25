@@ -24,6 +24,8 @@ public class UIControler : MonoBehaviour
     }
     public void StartGame(string startMode)
     {
+        PlayerPrefs.SetString("mode", startMode);
+
         SceneManager.LoadScene(1);
     }
 

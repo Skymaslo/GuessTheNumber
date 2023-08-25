@@ -21,17 +21,45 @@ public class GameManager : MonoBehaviour
     public Transform tipPosition;
     private int l = 0;
     private int r = 100;
-    private int current; 
+    private int current;
+    public GameObject guessBackGround;
+    public GameObject makeBackGround;
 
     private string mode = "Угадай";
     private int guessNumber;
+    private string currentMode;
     // Start is called before the first frame update
     void Start()
     {
-        
-        guessNumber = Random.Range(1, 101);
-        
+        currentMode = PlayerPrefs.GetString("mode", "Угадай");
 
+
+        if (!PlayerPrefs.HasKey("record"))
+        {
+            recordTextUI.text = "Рекорд -1";
+        }
+        else
+        {
+            record = PlayerPrefs.GetInt("record");
+            recordTextUI.text = "Рекорд: " + record.ToString();
+        }
+
+        record = PlayerPrefs.GetInt("record", int.MaxValue);
+        
+        recordTextUI.text = "Рекорд: " + record.ToString();
+        switch (currentMode)
+        {
+            case "Угадай":
+                guessBackGround.SetActive(true);
+                break;
+            case "Загадай":
+                makeBackGround.SetActive(true);
+                break;
+
+
+        }
+
+        guessNumber = Random.Range(1, 101);
     }
 
     // Update is called once per frame
@@ -58,6 +86,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnNewRecord()
     {
+        PlayerPrefs.SetInt("record", record);
         GameObject newRecordTip = Instantiate(RecordTip, RecordPosition);
         Destroy(newRecordTip, 3);
     }
