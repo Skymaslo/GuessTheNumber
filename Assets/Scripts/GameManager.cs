@@ -6,25 +6,48 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public InputField guessInput;
-    private int attemptGuess  = 0;
-    private int attemptWish = 0;
-    private int record = int.MaxValue - 1;
-    public Text PCInputTextUI;
-    public Text attemptWishTextUI;
-    public Text attemptTextUI;
-    public Text recordTextUI;
-    public Transform RecordPosition;
-    public GameObject RecordTip;
-    public GameObject tip;
-    public GameObject PCLosePanel;
-    public Transform tipPosition;
-    private int l = 0;
-    private int r = 100;
-    private int current;
+
+    [Header("Game BackGround")]
     public GameObject guessBackGround;
     public GameObject makeBackGround;
 
+    [Space(1)]
+    [Header("Inputs")]
+    public InputField guessInput;
+    public Text PCInputTextUI;
+
+    [Space(1)]
+    [Header("Attempts")]
+   
+    public Text attemptWishTextUI;
+    public Text attemptTextUI;
+
+    [Space(1)]
+    [Header("Record")]
+    public Transform RecordPosition;
+    public GameObject RecordTip;
+    public Text recordTextUI;
+
+
+    [Space(1)]
+    [Header("Tips")]
+    public GameObject tip;
+    public Transform tipPosition;
+
+    [Space(1)]
+    [Header("Lose")]
+    public GameObject PCLosePanel;
+
+    int a = 0;
+
+
+
+    private int attemptGuess = 0;
+    private int attemptWish = 0;
+    private int record = int.MaxValue - 1;
+    private int l = 0;
+    private int r = 100;
+    private int current;
     private string mode = "”гадай";
     private int guessNumber;
     private string currentMode;
