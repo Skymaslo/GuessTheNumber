@@ -64,12 +64,12 @@ public class GameManager : MonoBehaviour
         else
         {
             record = PlayerPrefs.GetInt("record");
-            recordTextUI.text = "Рекорд: " + record.ToString();
+            recordTextUI.text = $"Рекорд {record}";
         }
 
         record = PlayerPrefs.GetInt("record", int.MaxValue);
         
-        recordTextUI.text = "Рекорд: " + record.ToString();
+        recordTextUI.text = $"Рекорд {record}";
         switch (currentMode)
         {
             case "Угадай":
@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
         int inputNumber = int.Parse(guessInput.text);
 
         attemptGuess += 1;
-        attemptTextUI.text = "Попытки: " + attemptGuess.ToString();
+        attemptTextUI.text = $"Попытки {attemptGuess}";
         if (guessNumber > inputNumber)
         {
             print(attemptGuess);
@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
             {
                 print("Новый рекорд!");
                 record = attemptGuess;
-                recordTextUI.text = "Рекорд: " + record.ToString();
+                recordTextUI.text = $"Рекорд {record}";
                 SpawnNewRecord();
                 
             }
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
     {
         
         attemptWish += 1;
-        attemptWishTextUI.text = "Попытки: " + attemptWish.ToString();
+        attemptWishTextUI.text = $"Попытки {attemptWish}";
         print(attemptWish);
         
         switch (mode)
@@ -182,8 +182,8 @@ public class GameManager : MonoBehaviour
             PCLosePanel.SetActive(true);
         }
 
-        PCInputTextUI.text = current.ToString() + "?";
-        
+        PCInputTextUI.text = $"{current}  ?";
+
 
     }
 }

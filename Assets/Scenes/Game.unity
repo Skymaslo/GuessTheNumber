@@ -1920,18 +1920,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c8c8a808688d0438a5818b5516a114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  guessBackGround: {fileID: 1930782944}
+  makeBackGround: {fileID: 1710652888}
   guessInput: {fileID: 1727302038}
   PCInputTextUI: {fileID: 1896835641}
   attemptWishTextUI: {fileID: 692006970}
   attemptTextUI: {fileID: 258785426}
-  recordTextUI: {fileID: 1343871616}
   RecordPosition: {fileID: 187748274}
   RecordTip: {fileID: 3932375622006087180, guid: 976c92623023b6045b2297a34b0c028f, type: 3}
+  recordTextUI: {fileID: 1343871616}
   tip: {fileID: 2586478536172471129, guid: dd6885be6179e6443b50f8a69b6d0d1b, type: 3}
-  PCLosePanel: {fileID: 1444484059}
   tipPosition: {fileID: 1394857162}
-  guessBackGround: {fileID: 1930782944}
-  makeBackGround: {fileID: 1710652888}
+  PCLosePanel: {fileID: 1444484059}
 --- !u!4 &1017287439
 Transform:
   m_ObjectHideFlags: 0
@@ -4068,6 +4068,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653195861}
   m_CullTransparentMesh: 1
+--- !u!1 &1705275580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1705275582}
+  - component: {fileID: 1705275581}
+  m_Layer: 0
+  m_Name: RecordDataBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1705275581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705275580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32afceb1ffaa8b647baa3fdc649c69ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1705275582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705275580}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1126.2823, y: 787.61285, z: -6.6089735}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1710652888
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,10 +38,6 @@ public class MenuUICOontroller : MonoBehaviour
         string nick = nickInput.text;
         PlayerPrefs.SetString("CurrentPlayer", nick);
 
-        
-
-
-
         playerNameBackGround.SetActive(false );
         mainBackGround.SetActive(true);
         RenderNick();
@@ -51,6 +47,7 @@ public class MenuUICOontroller : MonoBehaviour
     {
         string PlayerNick = PlayerPrefs.GetString("CurrentPlayer");
 
-        PlayerName.text = "Привет, " + PlayerNick;
+        PlayerName.text = $"Превет {PlayerNick}";
     }
+
 }
