@@ -11,8 +11,7 @@ public class RecordDataBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        records.Add("Palyer1", 1);
-        records.Add("Palyer2", 2);
+        
         SaveRecord();
         LoadRecord();
     }
@@ -55,14 +54,35 @@ public class RecordDataBase : MonoBehaviour
         if (!IsPlayerInDB(playerName))
         {
             records.Add(playerName, -1);
+            PlayerPrefs.SetString("CurrentPlayer", playerName);
+            PlayerPrefs.SetInt("record", -1);
+            SaveRecord();
 
         }
     }
 
     private bool IsPlayerInDB(string playerName)
     {
-        
-        return false;
+        return records.ContainsKey(playerName);
+    }
+
+
+    public void SetNewRecords(string playerName, int record)
+    {
+        //задать и сохранить рекорд
+    }
+
+    public void SetCurrentPlayer(string playerName)
+    {
+        if (IsPlayerInDB(playerName))
+        {
+            PlayerPrefs.SetString("CurrentPlayer", playerName);
+                PlayerPrefs.SetInt("record", records[playerName]);
+        }
+        else
+        {
+            AddNewPlayer(playerName);
+        }
     }
 
 

@@ -25,8 +25,8 @@ public class DictController : MonoBehaviour
 
         foreach(var el in dict)
         {
-            print($"Key: {el.Key}");
-            print($"Value: {el.Value}");
+            //print($"Key: {el.Key}");
+            //print($"Value: {el.Value}");
         }
         countWords();
         RenderDict();
@@ -49,8 +49,8 @@ public class DictController : MonoBehaviour
                 countEng += 1;
             }
         }
-        print(countRus);
-        print(countEng);
+        //print(countRus);
+        //print(countEng);
         
     }
 
@@ -88,7 +88,7 @@ public class DictController : MonoBehaviour
 
     public void Translate()
     {
-        bool engToRus = togglesLang.toggleRusToEng.isOn;
+        bool engToRus = togglesLang.toggleEnToRus.isOn;
         string word = GetWordField.text;
         if (engToRus)
         {
@@ -114,6 +114,7 @@ public class DictController : MonoBehaviour
             
             if(el.Value == eng)
             {
+                rus = el.Key;
                 print(el.Key);
                 
             }
@@ -126,7 +127,7 @@ public class DictController : MonoBehaviour
         }
         else
         {
-            print("Такого слова нету");
+            Translation.text = "Такого слова нет";
         }
 
     }
@@ -144,7 +145,7 @@ public class DictController : MonoBehaviour
         }
         else
         {
-            print("Такого слова в списке нету");
+            Translation.text = "Такого слова нет";
         }
     }
 }

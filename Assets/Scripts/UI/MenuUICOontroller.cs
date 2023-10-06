@@ -12,6 +12,7 @@ public class MenuUICOontroller : MonoBehaviour
     public GameObject playerNameBackGround;
     public Text PlayerName;
     public InputField nickInput;
+    public RecordDataBase recordDB;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,8 @@ public class MenuUICOontroller : MonoBehaviour
     public void EnterNick()
     {
         string nick = nickInput.text;
-        PlayerPrefs.SetString("CurrentPlayer", nick);
+        //PlayerPrefs.SetString("CurrentPlayer", nick);
+        recordDB.SetCurrentPlayer(nick);
 
         playerNameBackGround.SetActive(false );
         mainBackGround.SetActive(true);

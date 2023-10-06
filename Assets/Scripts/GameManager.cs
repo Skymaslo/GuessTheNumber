@@ -69,6 +69,8 @@ public class GameManager : MonoBehaviour
 
         record = PlayerPrefs.GetInt("record", int.MaxValue);
         
+
+
         recordTextUI.text = $"Рекорд {record}";
         switch (currentMode)
         {
@@ -132,7 +134,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (record > attemptGuess)
+            if (record > attemptGuess || record == -1)  
             {
                 print("Новый рекорд!");
                 record = attemptGuess;
