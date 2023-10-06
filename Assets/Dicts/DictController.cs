@@ -7,9 +7,12 @@ public class DictController : MonoBehaviour
 {
     public Text RusText;
     public Text EngText;
+    public Text Translation;
     public InputField DeleteWord;
     public InputField EngWord;
     public InputField RusWord;
+    public InputField GetWordField; 
+    public TogglesLang togglesLang;
     private Dictionary<string, string> dict;
     // Start is called before the first frame update
     void Start()
@@ -65,7 +68,7 @@ public class DictController : MonoBehaviour
     public void NewWords()
     {
         dict.Add(EngWord.text, RusWord.text);
-        print(dict);
+        RenderDict();
     }
     
 
@@ -81,5 +84,67 @@ public class DictController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Translate()
+    {
+        bool engToRus = togglesLang.toggleRusToEng.isOn;
+        string word = GetWordField.text;
+        if (engToRus)
+        {
+            EngToRus(word);
+        }
+        else
+        {
+            RusToEng(word);
+        }
+
+    }
+
+    
+
+    public void EngToRus(string eng)
+    {
+
+        string rus = "";
+
+
+        foreach (var el in dict)
+        {
+            
+            if(el.Value == eng)
+            {
+                print(el.Key);
+                
+            }
+        }
+
+        if (rus != "")
+        {
+            print(rus);
+            Translation.text = rus;
+        }
+        else
+        {
+            print("Такого слова нету");
+        }
+
+    }
+
+    public void RusToEng(string rus)
+    {
+
+       
+        if (dict.ContainsKey(rus))
+        {
+            string result = dict[rus];
+            print(result);
+            Translation.text = result;
+
+        }
+        else
+        {
+            print("Такого слова в списке нету");
+        }
     }
 }
